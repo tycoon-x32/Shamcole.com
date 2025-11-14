@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShamCole Studio - Premium Branded Photoshoot Space</title>
+    <!-- Favicon -->
+<link rel="icon" href="https://images.pexels.com/photos/1787224/pexels-photo-1787224.jpeg?auto=compress&cs=tinysrgb&w=32&h=32" type="image/png">
+
+<!-- Favicon (JPEG from Pexels) -->
+<link rel="icon" type="image/jpeg" sizes="32x32" href="https://images.pexels.com/photos/1787224/pexels-photo-1787224.jpeg">
+<link rel="icon" type="image/jpeg" sizes="192x192" href="https://images.pexels.com/photos/1787224/pexels-photo-1787224.jpeg">
+<link rel="apple-touch-icon" href="https://images.pexels.com/photos/1787224/pexels-photo-1787224.jpeg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: #fff;
+        }
+
+        /* Animations */
+        @keyframes pulse-glow {
+            0%, 100% {
+                opacity: 0.3;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes text-glow {
+            0%, 100% {
+                text-shadow: 0 0 40px rgba(255,255,255,0.3), 0 0 80px rgba(255,255,255,0.2);
+            }
+            50% {
+                text-shadow: 0 0 60px rgba(255,255,255,0.4), 0 0 100px rgba(255,255,255,0.3);
+            }
+        }
+
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scale-in {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slide-in-left {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slide-in-right {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+        }
+
+        .animate-on-scroll.visible {
+            animation: fade-in-up 0.8s ease-out forwards;
+        }
+
+        .light-strip-top {
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        .light-strip-bottom {
+            animation: pulse-glow 3s ease-in-out infinite 1.5s;
+        }
+
+        .brand-logo-glow {
+            animation: text-glow 4s ease-in-out infinite;
+        }
+
+        .hero-content {
+            animation: fade-in-up 1s ease-out forwards;
+        }
+
+        .hero-logo {
+            animation: scale-in 0.8s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-tagline {
+            animation: fade-in 1s ease-out 0.5s forwards;
+            opacity: 0;
+        }
+
+        .hero-cta {
+            animation: fade-in-up 0.8s ease-out 1s forwards;
+            opacity: 0;
+        }
+
+        /* Hover effects */
+        .image-hover-container {
+            overflow: hidden;
+        }
+
+        .image-hover-container img {
+            transition: transform 0.7s ease;
+        }
+
+        .image-hover-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .card-hover {
+            transition: all 0.5s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-black min-h-screen">
+    
+    <!-- Hero Section -->
+    <section class="relative h-screen overflow-hidden bg-black">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0">
+            <img
+                src="https://images.unsplash.com/photo-1627917932033-74123f070958?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaG90b2dyYXBoeSUyMHN0dWRpbyUyMGludGVyaW9yfGVufDF8fHx8MTc2MzEwODA3Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                alt="Studio Interior"
+                class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black"></div>
+        </div>
+
+        <!-- Animated Light Strips -->
+        <div class="light-strip-top absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent"></div>
+        <div class="light-strip-bottom absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 h-full flex flex-col items-center justify-center px-4">
+            <div class="text-center space-y-6">
+                <!-- Logo/Brand Name -->
+                <div class="hero-logo inline-flex items-center gap-3 mb-8">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <h1 class="text-6xl md:text-8xl tracking-wider text-white" style="font-weight: 300;">
+                        SHAMCOLE
+                    </h1>
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                    </svg>
+                </div>
+
+                <div class="hero-tagline space-y-4">
+                    <p class="text-xl md:text-2xl text-white/90 tracking-widest uppercase">
+                        Premium Branded Photoshoot Space
+                    </p>
+                    <div class="h-[1px] w-64 mx-auto bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+                    <p class="text-sm md:text-base text-white/70 tracking-wider uppercase">
+                        Luxury • Futuristic • Clean • Cinematic
+                    </p>
+                </div>
+
+                <div class="hero-cta pt-8 space-y-3">
+                    <button class="px-8 py-4 bg-white text-black tracking-wider uppercase hover:bg-white/90 transition-colors">
+                        Book Your Session
+                    </button>
+                    <p class="text-xs text-white/50 tracking-widest">
+                        WHERE EVERY SHOT FEELS CINEMATIC
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom fade gradient -->
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
+    </section>
+
+    <!-- Photoshoot Bay Section -->
+    <section class="relative py-24 px-4 md:px-8 bg-black">
+        <!-- Ambient Glow -->
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-[120px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="animate-on-scroll text-center mb-16">
+                <div class="inline-block">
+                    <h2 class="text-4xl md:text-6xl text-white mb-4 tracking-wider">
+                        Hero Photoshoot Bay
+                    </h2>
+                    <div class="h-[1px] bg-gradient-to-r from-transparent via-white to-transparent"></div>
+                </div>
+                <p class="mt-6 text-white/60 tracking-wide max-w-2xl mx-auto">
+                    Massive black backdrop with frameless seamless paper roll system. 
+                    Floating softbox lights with white halo illumination.
+                </p>
+            </div>
+
+            <!-- Main Image Grid -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="animate-on-scroll relative group image-hover-container">
+                    <div class="relative aspect-[4/5] overflow-hidden bg-zinc-900">
+                        <img
+                            src="https://images.unsplash.com/photo-1736670324213-c3fcff2303e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwcGhvdG9zaG9vdCUyMHN0dWRpb3xlbnwxfHx8fDE3NjMwNDE3MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                            alt="Fashion Photoshoot"
+                            class="w-full h-full object-cover"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 border border-white/0 group-hover:border-white/20 transition-colors duration-500"></div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                        <p class="text-white tracking-wider uppercase text-sm">Fashion Photography</p>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll relative group image-hover-container">
+                    <div class="relative aspect-[4/5] overflow-hidden bg-zinc-900">
+                        <img
+                            src="https://images.unsplash.com/photo-1668453814676-c8093305fae6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkaW8lMjBsaWdodGluZyUyMHNldHVwfGVufDF8fHx8MTc2MzEwODA3Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                            alt="Studio Lighting"
+                            class="w-full h-full object-cover"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 border border-white/0 group-hover:border-white/20 transition-colors duration-500"></div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                        <p class="text-white tracking-wider uppercase text-sm">Professional Lighting</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="animate-on-scroll mt-12 grid md:grid-cols-3 gap-6">
+                <div class="relative p-6 bg-zinc-950 border border-white/5 hover:border-white/20 transition-colors group">
+                    <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <h3 class="text-white tracking-wider mb-2">Seamless Backdrops</h3>
+                    <p class="text-white/50 text-sm">Frameless paper roll systems</p>
+                </div>
+                <div class="relative p-6 bg-zinc-950 border border-white/5 hover:border-white/20 transition-colors group">
+                    <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <h3 class="text-white tracking-wider mb-2">Floating Softboxes</h3>
+                    <p class="text-white/50 text-sm">White halo illumination</p>
+                </div>
+                <div class="relative p-6 bg-zinc-950 border border-white/5 hover:border-white/20 transition-colors group">
+                    <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <h3 class="text-white tracking-wider mb-2">Obsidian Platform</h3>
+                    <p class="text-white/50 text-sm">Smooth black marble finish</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Identity Section -->
+    <section class="relative py-32 px-4 overflow-hidden bg-black">
+        <!-- Ambient Glows -->
+        <div class="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-white/3 rounded-full blur-[150px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-white/2 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <!-- Floating Logo Effect -->
+            <div class="animate-on-scroll relative inline-block">
+                <!-- Glow effect behind text -->
+                <div class="absolute inset-0 blur-2xl bg-white/10 scale-110"></div>
+                
+                <!-- Main Logo Text -->
+                <h2 class="brand-logo-glow relative text-7xl md:text-9xl tracking-[0.3em] text-white" style="font-weight: 200;">
+                    SHAMCOLE
+                </h2>
+            </div>
+
+            <!-- Tagline -->
+            <div class="animate-on-scroll mt-12 space-y-6">
+                <div class="h-[1px] w-96 max-w-full mx-auto bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+                
+                <p class="text-xl md:text-2xl text-white/80 tracking-widest italic" style="font-weight: 300;">
+                    "Quiet luxury — a studio where every shot feels cinematic<br />and every moment feels crafted"
+                </p>
+                
+                <div class="h-[1px] w-96 max-w-full mx-auto bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+            </div>
+
+            <!-- Feature Pills -->
+            <div class="animate-on-scroll mt-16 flex flex-wrap justify-center gap-4">
+                <span class="px-6 py-2 border border-white/20 text-white/70 tracking-widest uppercase text-sm hover:bg-white/5 hover:border-white/40 transition-all">
+                    Luxury
+                </span>
+                <span class="px-6 py-2 border border-white/20 text-white/70 tracking-widest uppercase text-sm hover:bg-white/5 hover:border-white/40 transition-all">
+                    Futuristic
+                </span>
+                <span class="px-6 py-2 border border-white/20 text-white/70 tracking-widest uppercase text-sm hover:bg-white/5 hover:border-white/40 transition-all">
+                    Clean
+                </span>
+                <span class="px-6 py-2 border border-white/20 text-white/70 tracking-widest uppercase text-sm hover:bg-white/5 hover:border-white/40 transition-all">
+                    Cinematic
+                </span>
+            </div>
+
+            <!-- Perfect for selfies note -->
+            <p class="animate-on-scroll mt-12 text-white/40 text-sm tracking-wider">
+                PERFECT FOR CLIENT SELFIES • INFLUENCER SHOTS • BEHIND-THE-SCENES CONTENT
+            </p>
+        </div>
+    </section>
+
+    <!-- Equipment Display Section -->
+    <section class="relative py-24 px-4 md:px-8 bg-zinc-950">
+        <!-- Top border glow -->
+        <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="animate-on-scroll text-center mb-16">
+                <div class="inline-flex items-center gap-4 mb-4">
+                    <svg class="w-8 h-8 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 1v6m0 6v6m8-9h-6m-6 0H2"></path>
+                    </svg>
+                    <h2 class="text-4xl md:text-6xl text-white tracking-wider">
+                        Premium Equipment
+                    </h2>
+                    <svg class="w-8 h-8 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 1v6m0 6v6m8-9h-6m-6 0H2"></path>
+                    </svg>
+                </div>
+                <p class="mt-4 text-white/60 tracking-wide">
+                    Professional-grade cameras and lighting arranged like an art installation
+                </p>
+            </div>
+
+            <!-- Equipment Hero Image -->
+            <div class="animate-on-scroll relative mb-16 overflow-hidden">
+                <div class="aspect-[21/9] relative bg-black">
+                    <img
+                        src="https://images.unsplash.com/photo-1496598894108-068941485c21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBjYW1lcmElMjBlcXVpcG1lbnR8ZW58MXx8fHwxNzYzMDg2MzU2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                        alt="Professional Camera Equipment"
+                        class="w-full h-full object-cover"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 border border-white/10"></div>
+                </div>
+
+                <!-- Corner accents -->
+                <div class="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-white/40"></div>
+                <div class="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-white/40"></div>
+                <div class="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-white/40"></div>
+                <div class="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-white/40"></div>
+            </div>
+
+            <!-- Camera Collection Wall -->
+            <div class="animate-on-scroll relative mb-12">
+                <div class="aspect-video relative bg-zinc-900 overflow-hidden">
+                    <img
+                        src="https://images.unsplash.com/photo-1679562177780-fa6b4f3d314c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW1lcmElMjBjb2xsZWN0aW9uJTIwd2FsbHxlbnwxfHx8fDE3NjMxMDgwNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                        alt="Camera Collection Wall"
+                        class="w-full h-full object-cover"
+                    />
+                    <div class="absolute inset-0 bg-black/40"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center">
+                            <svg class="w-16 h-16 text-white/80 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <p class="text-white tracking-widest text-xl">WALL-MOUNTED LENS GRID</p>
+                            <p class="text-white/60 text-sm mt-2 tracking-wider">ARRANGED LIKE AN ART INSTALLATION</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Equipment Grid -->
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="animate-on-scroll relative group">
+                    <div class="bg-black border border-white/10 p-6 hover:border-white/30 transition-all duration-500">
+                        <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 border border-white/20 flex items-center justify-center group-hover:border-white/40 transition-colors">
+                                <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-xs text-white/40 tracking-widest">01</span>
+                        </div>
+                        
+                        <h3 class="text-white tracking-wider mb-2">Sony A7R V</h3>
+                        <p class="text-white/50 text-sm tracking-wide">Full-Frame Mirrorless</p>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll relative group">
+                    <div class="bg-black border border-white/10 p-6 hover:border-white/30 transition-all duration-500">
+                        <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 border border-white/20 flex items-center justify-center group-hover:border-white/40 transition-colors">
+                                <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-xs text-white/40 tracking-widest">02</span>
+                        </div>
+                        
+                        <h3 class="text-white tracking-wider mb-2">Canon EOS R5</h3>
+                        <p class="text-white/50 text-sm tracking-wide">Professional Cinema</p>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll relative group">
+                    <div class="bg-black border border-white/10 p-6 hover:border-white/30 transition-all duration-500">
+                        <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 border border-white/20 flex items-center justify-center group-hover:border-white/40 transition-colors">
+                                <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 1v6m0 6v6"></path>
+                                </svg>
+                            </div>
+                            <span class="text-xs text-white/40 tracking-widest">03</span>
+                        </div>
+                        
+                        <h3 class="text-white tracking-wider mb-2">Zeiss Batis 85mm</h3>
+                        <p class="text-white/50 text-sm tracking-wide">Portrait Lens</p>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll relative group">
+                    <div class="bg-black border border-white/10 p-6 hover:border-white/30 transition-all duration-500">
+                        <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 border border-white/20 flex items-center justify-center group-hover:border-white/40 transition-colors">
+                                <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 1v6m0 6v6"></path>
+                                </svg>
+                            </div>
+                            <span class="text-xs text-white/40 tracking-widest">04</span>
+                        </div>
+                        
+                        <h3 class="text-white tracking-wider mb-2">Sigma Art 24-70mm</h3>
+                        <p class="text-white/50 text-sm tracking-wide">Versatile Zoom</p>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll relative group">
+                    <div class="bg-black border border-white/10 p-6 hover:border-white/30 transition-all duration-500">
+                        <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 border border-white/20 flex items-center justify-center group-hover:border-white/40 transition-colors">
+                                <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                </svg>
+                            </div>
+                            <span class="text-xs text-white/40 tracking-widest">05</span>
+                        </div>
+                        
+                        <h3 class="text-white tracking-wider mb-2">Profoto B10X</h3>
+                        <p class="text-white/50 text-sm tracking-wide">Studio Flash</p>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll relative group">
+                    <div class="bg-black border border-white/10 p-6 hover:border-white/30 transition-all duration-500">
+                        <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 border border-white/20 flex items-center justify-center group-hover:border-white/40 transition-colors">
+                                <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                </svg>
+                            </div>
+                            <span class="text-xs text-white/40 tracking-widest">06</span>
+                        </div>
+                        
+                        <h3 class="text-white tracking-wider mb-2">Godox VL300</h3>
+                        <p class="text-white/50 text-sm tracking-wide">LED Panel</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="animate-on-scroll mt-16 flex flex-wrap justify-center gap-8 text-center">
+                <div class="space-y-2">
+                    <p class="text-3xl text-white">12+</p>
+                    <p class="text-white/50 text-sm tracking-widest">CAMERA BODIES</p>
+                </div>
+                <div class="w-[1px] bg-white/20"></div>
+                <div class="space-y-2">
+                    <p class="text-3xl text-white">25+</p>
+                    <p class="text-white/50 text-sm tracking-widest">PRIME LENSES</p>
+                </div>
+                <div class="w-[1px] bg-white/20"></div>
+                <div class="space-y-2">
+                    <p class="text-3xl text-white">∞</p>
+                    <p class="text-white/50 text-sm tracking-widest">CREATIVE POSSIBILITIES</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Editing Corner Section -->
+    <section class="relative py-24 px-4 md:px-8 bg-black">
+        <!-- Ambient white glow effect -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-white/5 blur-[150px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Content -->
+                <div class="animate-on-scroll space-y-8">
+                    <div>
+                        <div class="inline-flex items-center gap-3 mb-4">
+                            <svg class="w-8 h-8 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                            <h2 class="text-4xl md:text-6xl text-white tracking-wider">
+                                Editing Corner
+                            </h2>
+                        </div>
+                        <div class="h-[1px] w-48 bg-gradient-to-r from-white/40 to-transparent mb-6"></div>
+                        <p class="text-white/60 tracking-wide leading-relaxed">
+                            A pure white desk with black-rim monitors. Ambient wall lighting creating a misty white haze effect. 
+                            Futuristic black ergonomic chair with silver trims for extended editing sessions.
+                        </p>
+                    </div>
+
+                    <!-- Features List -->
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 group">
+                            <div class="flex-shrink-0 w-10 h-10 border border-white/20 flex items-center justify-center text-white/60 group-hover:border-white/40 group-hover:text-white transition-all">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-white tracking-wider mb-1">Dual 4K Displays</h3>
+                                <p class="text-white/50 text-sm">Color-calibrated black-rim monitors</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 group">
+                            <div class="flex-shrink-0 w-10 h-10 border border-white/20 flex items-center justify-center text-white/60 group-hover:border-white/40 group-hover:text-white transition-all">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                                    <rect x="9" y="9" width="6" height="6"></rect>
+                                    <line x1="9" y1="1" x2="9" y2="4"></line>
+                                    <line x1="15" y1="1" x2="15" y2="4"></line>
+                                    <line x1="9" y1="20" x2="9" y2="23"></line>
+                                    <line x1="15" y1="20" x2="15" y2="23"></line>
+                                    <line x1="20" y1="9" x2="23" y2="9"></line>
+                                    <line x1="20" y1="14" x2="23" y2="14"></line>
+                                    <line x1="1" y1="9" x2="4" y2="9"></line>
+                                    <line x1="1" y1="14" x2="4" y2="14"></line>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-white tracking-wider mb-1">High-Performance Workstation</h3>
+                                <p class="text-white/50 text-sm">M3 Max & RTX 4090 powered editing</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 group">
+                            <div class="flex-shrink-0 w-10 h-10 border border-white/20 flex items-center justify-center text-white/60 group-hover:border-white/40 group-hover:text-white transition-all">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-white tracking-wider mb-1">Professional Suite</h3>
+                                <p class="text-white/50 text-sm">Lightroom, Capture One, Photoshop</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ambient lighting note -->
+                    <div class="p-6 border border-white/10 bg-white/[0.02]">
+                        <p class="text-white/70 text-sm tracking-wide italic">
+                            "Ambient wall lighting gives a misty white haze effect, creating the perfect environment 
+                            for precision color grading and detail work."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right: Visual -->
+                <div class="animate-on-scroll relative">
+                    <!-- Main editing space representation -->
+                    <div class="relative aspect-[4/3] bg-zinc-900 overflow-hidden">
+                        <img
+                            src="https://images.unsplash.com/photo-1647956450271-2ff54205bebf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwcGhvdG9ncmFwaHklMjBiYWNrZHJvcHxlbnwxfHx8fDE3NjMxMDgwNzd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                            alt="Editing Setup"
+                            class="w-full h-full object-cover"
+                        />
+                        
+                        <!-- White glow overlay effect -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-tl from-black/60 via-transparent to-transparent"></div>
+                        
+                        <!-- Border frame -->
+                        <div class="absolute inset-0 border-2 border-white/10"></div>
+                        
+                        <!-- Corner accents with silver -->
+                        <div class="absolute top-0 left-0 w-20 h-20">
+                            <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-white/60 to-transparent"></div>
+                            <div class="absolute top-0 left-0 w-[2px] h-full bg-gradient-to-b from-white/60 to-transparent"></div>
+                        </div>
+                        <div class="absolute top-0 right-0 w-20 h-20">
+                            <div class="absolute top-0 right-0 w-full h-[2px] bg-gradient-to-l from-white/60 to-transparent"></div>
+                            <div class="absolute top-0 right-0 w-[2px] h-full bg-gradient-to-b from-white/60 to-transparent"></div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-20 h-20">
+                            <div class="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-white/60 to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 w-[2px] h-full bg-gradient-to-t from-white/60 to-transparent"></div>
+                        </div>
+                        <div class="absolute bottom-0 right-0 w-20 h-20">
+                            <div class="absolute bottom-0 right-0 w-full h-[2px] bg-gradient-to-l from-white/60 to-transparent"></div>
+                            <div class="absolute bottom-0 right-0 w-[2px] h-full bg-gradient-to-t from-white/60 to-transparent"></div>
+                        </div>
+                    </div>
+
+                    <!-- Floating accent cards -->
+                    <div class="absolute -bottom-6 -right-6 bg-white text-black p-6 shadow-2xl" style="width: 200px;">
+                        <p class="text-xs tracking-widest mb-2 opacity-60">ERGONOMIC DESIGN</p>
+                        <p class="tracking-wider">Futuristic Black Chair with Silver Trims</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Merch Display Section -->
+    <section class="relative py-24 px-4 md:px-8 bg-zinc-950">
+        <!-- Top border -->
+        <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+
+        <!-- Ambient glows -->
+        <div class="absolute top-1/4 right-1/3 w-96 h-96 bg-white/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="animate-on-scroll text-center mb-16">
+                <div class="inline-flex items-center gap-4 mb-4">
+                    <svg class="w-8 h-8 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                    <h2 class="text-4xl md:text-6xl text-white tracking-wider">
+                        Merch Collection
+                    </h2>
+                    <svg class="w-8 h-8 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                    </svg>
+                </div>
+                <p class="mt-4 text-white/60 tracking-wide max-w-2xl mx-auto">
+                    Minimal black shelving wall with white under-glow. Clear acrylic stands with subtle lighting 
+                    underneath to make items appear to float.
+                </p>
+            </div>
+
+            <!-- Display Description -->
+            <div class="animate-on-scroll mb-12 grid md:grid-cols-3 gap-6 text-center">
+                <div class="p-6 border border-white/10">
+                    <p class="text-white tracking-wider mb-2">Gunmetal Racks</p>
+                    <p class="text-white/50 text-sm">Clothing racks in premium black finish</p>
+                </div>
+                <div class="p-6 border border-white/10">
+                    <p class="text-white tracking-wider mb-2">Floating Display</p>
+                    <p class="text-white/50 text-sm">Mannequins with clean white under-lighting</p>
+                </div>
+                <div class="p-6 border border-white/10">
+                    <p class="text-white tracking-wider mb-2">Soft Halos</p>
+                    <p class="text-white/50 text-sm">Each product lit to emphasize quality</p>
+                </div>
+            </div>
+
+            <!-- Merch Grid -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="animate-on-scroll group relative">
+                    <div class="relative">
+                        <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-white/20 blur-xl group-hover:bg-white/30 transition-all duration-500"></div>
+                        
+                        <div class="card-hover relative bg-black border border-white/10 p-8 group-hover:border-white/30 transition-all duration-500">
+                            <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            
+                            <div class="aspect-square bg-zinc-900 mb-6 flex items-center justify-center border border-white/5 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+                                <svg class="w-16 h-16 text-white/20 group-hover:text-white/40 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                                </svg>
+                                
+                                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div class="absolute top-0 left-0 right-0 h-[1px] bg-white/40"></div>
+                                    <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-white/40"></div>
+                                    <div class="absolute top-0 bottom-0 left-0 w-[1px] bg-white/40"></div>
+                                    <div class="absolute top-0 bottom-0 right-0 w-[1px] bg-white/40"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-2">
+                                <h3 class="text-white tracking-wider">Premium Crewneck</h3>
+                                <p class="text-white/50 text-sm">Matte Black</p>
+                                <p class="text-white/80 tracking-widest">$89</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll group relative">
+                    <div class="relative">
+                        <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-white/20 blur-xl group-hover:bg-white/30 transition-all duration-500"></div>
+                        
+                        <div class="card-hover relative bg-black border border-white/10 p-8 group-hover:border-white/30 transition-all duration-500">
+                            <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            
+                            <div class="aspect-square bg-zinc-900 mb-6 flex items-center justify-center border border-white/5 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+                                <svg class="w-16 h-16 text-white/20 group-hover:text-white/40 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                                </svg>
+                                
+                                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div class="absolute top-0 left-0 right-0 h-[1px] bg-white/40"></div>
+                                    <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-white/40"></div>
+                                    <div class="absolute top-0 bottom-0 left-0 w-[1px] bg-white/40"></div>
+                                    <div class="absolute top-0 bottom-0 right-0 w-[1px] bg-white/40"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-2">
+                                <h3 class="text-white tracking-wider">Studio Tote Bag</h3>
+                                <p class="text-white/50 text-sm">White Canvas</p>
+                                <p class="text-white/80 tracking-widest">$49</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll group relative">
+                    <div class="relative">
+                        <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-white/20 blur-xl group-hover:bg-white/30 transition-all duration-500"></div>
+                        
+                        <div class="card-hover relative bg-black border border-white/10 p-8 group-hover:border-white/30 transition-all duration-500">
+                            <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            
+                            <div class="aspect-square bg-zinc-900 mb-6 flex items-center justify-center border border-white/5 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+                                <svg class="w-16 h-16 text-white/20 group-hover:text-white/40 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                                </svg>
+                                
+                                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div class="absolute top-0 left-0 right-0 h-[1px] bg-white/40"></div>
+                                    <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-white/40"></div>
+                                    <div class="absolute top-0 bottom-0 left-0 w-[1px] bg-white/40"></div>
+                                    <div class="absolute top-0 bottom-0 right-0 w-[1px] bg-white/40"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-2">
+                                <h3 class="text-white tracking-wider">Signature Cap</h3>
+                                <p class="text-white/50 text-sm">Black & Silver</p>
+                                <p class="text-white/80 tracking-widest">$39</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll group relative">
+                    <div class="relative">
+                        <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-white/20 blur-xl group-hover:bg-white/30 transition-all duration-500"></div>
+                        
+                        <div class="card-hover relative bg-black border border-white/10 p-8 group-hover:border-white/30 transition-all duration-500">
+                            <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            
+                            <div class="aspect-square bg-zinc-900 mb-6 flex items-center justify-center border border-white/5 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+                                <svg class="w-16 h-16 text-white/20 group-hover:text-white/40 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                                </svg>
+                                
+                                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div class="absolute top-0 left-0 right-0 h-[1px] bg-white/40"></div>
+                                    <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-white/40"></div>
+                                    <div class="absolute top-0 bottom-0 left-0 w-[1px] bg-white/40"></div>
+                                    <div class="absolute top-0 bottom-0 right-0 w-[1px] bg-white/40"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-2">
+                                <h3 class="text-white tracking-wider">Minimalist Hoodie</h3>
+                                <p class="text-white/50 text-sm">Pearl White</p>
+                                <p class="text-white/80 tracking-widest">$129</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll group relative">
+                    <div class="relative">
+                        <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-white/20 blur-xl group-hover:bg-white/30 transition-all duration-500"></div>
+                        
+                        <div class="card-hover relative bg-black border border-white/10 p-8 group-hover:border-white/30 transition-all duration-500">
+                            <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            
+                            <div class="aspect-square bg-zinc-900 mb-6 flex items-center justify-center border border-white/5 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+                                <svg class="w-16 h-16 text-white/20 group-hover:text-white/40 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                                </svg>
+                                
+                                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div class="absolute top-0 left-0 right-0 h-[1px] bg-white/40"></div>
+                                    <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-white/40"></div>
+                                    <div class="absolute top-0 bottom-0 left-0 w-[1px] bg-white/40"></div>
+                                    <div class="absolute top-0 bottom-0 right-0 w-[1px] bg-white/40"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-2">
+                                <h3 class="text-white tracking-wider">Technical Tee</h3>
+                                <p class="text-white/50 text-sm">Deep Black</p>
+                                <p class="text-white/80 tracking-widest">$59</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll group relative">
+                    <div class="relative">
+                        <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-white/20 blur-xl group-hover:bg-white/30 transition-all duration-500"></div>
+                        
+                        <div class="card-hover relative bg-black border border-white/10 p-8 group-hover:border-white/30 transition-all duration-500">
+                            <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            
+                            <div class="aspect-square bg-zinc-900 mb-6 flex items-center justify-center border border-white/5 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+                                <svg class="w-16 h-16 text-white/20 group-hover:text-white/40 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                                </svg>
+                                
+                                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div class="absolute top-0 left-0 right-0 h-[1px] bg-white/40"></div>
+                                    <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-white/40"></div>
+                                    <div class="absolute top-0 bottom-0 left-0 w-[1px] bg-white/40"></div>
+                                    <div class="absolute top-0 bottom-0 right-0 w-[1px] bg-white/40"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-2">
+                                <h3 class="text-white tracking-wider">Studio Scarf</h3>
+                                <p class="text-white/50 text-sm">Silk White</p>
+                                <p class="text-white/80 tracking-widest">$69</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Styling Details -->
+            <div class="animate-on-scroll text-center space-y-6">
+                <div class="h-[1px] w-full max-w-4xl mx-auto bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                
+                <p class="text-white/70 tracking-wide max-w-2xl mx-auto italic">
+                    Each product lit with its own soft halo to emphasize premium quality. 
+                    Clear acrylic stands create the illusion of floating merchandise.
+                </p>
+                
+                <button class="mt-8 px-8 py-4 border border-white/30 text-white tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-300">
+                    Shop Collection
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative bg-black py-16 px-4 md:px-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                        </svg>
+                        <h3 class="text-2xl text-white tracking-wider">SHAMCOLE STUDIO</h3>
+                    </div>
+                    <p class="text-white/60 text-sm tracking-wide leading-relaxed">
+                        Premium branded photoshoot space where every shot feels cinematic and every moment feels crafted. 
+                        Luxury • Futuristic • Clean • Cinematic
+                    </p>
+                    <div class="flex gap-4 pt-4">
+                        <a href="#" class="w-10 h-10 border border-white/20 flex items-center justify-center text-white/60 hover:border-white/40 hover:text-white transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <rect width="24" height="24" fill="none"/>
+                                <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 border border-white/20 flex items-center justify-center text-white/60 hover:border-white/40 hover:text-white transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.70,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.60 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 border border-white/20 flex items-center justify-center text-white/60 hover:border-white/40 hover:text-white transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white tracking-wider mb-4">Services</h4>
+                    <ul class="space-y-2 text-white/60 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Fashion Photography</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Product Shoots</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Portrait Sessions</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Commercial Work</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white tracking-wider mb-4">Contact</h4>
+                    <ul class="space-y-2 text-white/60 text-sm">
+                        <li>info@shamcole.studio</li>
+                        <li>+(254)7</li>
+                        <li class="pt-2">Downtown Studio District<br />Kenya, HB</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-white/40 text-xs tracking-wider">
+                    © 2026 SHAMCOLE STUDIO. ALL RIGHTS RESERVED.
+                </p>
+                <div class="flex gap-6 text-white/40 text-xs tracking-wider">
+                    <a href="#" class="hover:text-white transition-colors">PRIVACY POLICY</a>
+                    <a href="#" class="hover:text-white transition-colors">TERMS OF SERVICE</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom glow line -->
+        <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+    </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animate-on-scroll class
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
