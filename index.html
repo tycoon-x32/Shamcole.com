@@ -12,6 +12,11 @@
 <link rel="icon" type="image/jpeg" sizes="192x192" href="https://images.pexels.com/photos/1787224/pexels-photo-1787224.jpeg">
 <link rel="apple-touch-icon" href="https://images.pexels.com/photos/1787224/pexels-photo-1787224.jpeg">
 
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="ShamCole Studio - Premium Branded Photoshoot Space">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
@@ -1051,6 +1056,17 @@
                 }
             });
         });
+    </script>
+
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js').then(registration => {
+                console.log('Service Worker registered successfully:', registration);
+            }).catch(error => {
+                console.log('Service Worker registration failed:', error);
+            });
+        }
     </script>
 </body>
 </html>
